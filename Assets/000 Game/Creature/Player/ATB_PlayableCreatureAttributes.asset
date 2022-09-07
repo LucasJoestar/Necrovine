@@ -20,7 +20,7 @@ MonoBehaviour:
     m_Bits: 4096
   RotationSpeed: 4.7
   Radius: 0.5
-  MaxHealth: 50
+  MaxHealth: 100
   AttackCooldown: {x: 0.2, y: 0.2}
   AttackDistance: 0.7
-  AttackDamages: 12
+  AttackDamages: 7

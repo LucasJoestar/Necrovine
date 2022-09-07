@@ -37,6 +37,16 @@ namespace Necrovine.Creatures {
 
         [SerializeField, Enhanced, ReadOnly] private int comboIndex = 1;
         [SerializeField, Enhanced, ReadOnly] private float comboTimer = 0f;
+
+        [Space]
+
+        [SerializeField] private float[] comboCoefs = new float[3];
+
+        [Space]
+
+        [SerializeField, Enhanced, ReadOnly] private Vector3 originPosition = Vector3.zero;
+        [SerializeField, Enhanced, ReadOnly] private Quaternion originRotation = Quaternion.identity;
+
         #endregion
 
         #region Animation
@@ -46,6 +56,15 @@ namespace Necrovine.Creatures {
 
         protected void PlayCombo(int _combo) {
             animator.SetInteger(combo_Id, _combo);
+        }
+        #endregion
+
+        #region Enhanced Behaviour
+        protected override void OnInit() {
+            base.OnInit();
+
+            originPosition = Position;
+            originRotation = Transform.rotation;
         }
         #endregion
 
@@ -59,12 +78,18 @@ namespace Necrovine.Creatures {
         internal override void OnStopAttack() {
             base.OnStopAttack();
 
+            hasAttackTarget = false;
+
             if (comboIndex != MaxCombo) {
                 comboTimer = comboDuration;
                 comboIndex = Mathf.Clamp(comboIndex + 1, 1, MaxCombo);
             } else {
                 comboIndex = 1;
             }
+        }
+
+        protected override int GetDamages() {
+            return (int)(base.GetDamages() * comboCoefs[comboIndex - 1]);
         }
         #endregion
 
@@ -78,6 +103,7 @@ namespace Necrovine.Creatures {
         public override void ResetHealth() {
             base.ResetHealth();
 
+            movable.SetPositionAndRotation(originPosition, originRotation);
             isPlayable = true;
         }
         #endregion

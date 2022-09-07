@@ -6,6 +6,8 @@
         "EnhancedFramework.GameStates",
         "EnhancedFramework.Input",
         "EnhancedFramework.SceneManagement",
+        "Necrovine.CameraManagement",
+        "Necrovine.GameplayElements",
         "Necrovine.UI"
     ],
     "includePlatforms": [],

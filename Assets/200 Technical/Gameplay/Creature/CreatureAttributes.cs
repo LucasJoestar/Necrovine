@@ -28,7 +28,7 @@ namespace Necrovine.Creatures {
 
 		[Section("Combat")]
 
-		[Enhanced, Range(0f, 100f)] public int MaxHealth = 100;
+		[Enhanced, Range(0f, 500f)] public int MaxHealth = 100;
 		[Enhanced, MinMax(0f, 10f)] public Vector2 AttackCooldown = new Vector2(.1f, .1f);
 
 		[Space]

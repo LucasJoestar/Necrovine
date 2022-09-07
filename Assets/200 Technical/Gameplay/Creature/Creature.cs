@@ -67,6 +67,12 @@ namespace Necrovine.Creatures  {
         [SerializeField, Enhanced, Required] protected ExtendedBehaviour extended = null;
         [SerializeField, Enhanced, Required] protected new AudioSource audio = null;
 
+        public ControlledMovable3D Movable => movable;
+
+        [Space]
+
+        [SerializeField] private FlagValueGroup onDeathFlags = new FlagValueGroup();
+
         [Space]
 
         [SerializeField] protected SuperColor gaugeColor = SuperColor.Crimson;
@@ -218,7 +224,7 @@ namespace Necrovine.Creatures  {
 
         private void OnDestroy() {
             if (!GameManager.IsQuittingApplication) {
-                Destroy(gauge.gameObject);
+                gauge.Destroy();
             }
         }
 
@@ -365,6 +371,10 @@ namespace Necrovine.Creatures  {
 
         // -----------------------
 
+        protected virtual int GetDamages() {
+            return attributes.AttackDamages;
+        }
+
         internal void OnAttack() {
             // Fail attack if the opponent is too far.
             float _distance = (attackTarget.Position - Position).Flat().AbsSum();
@@ -376,16 +386,14 @@ namespace Necrovine.Creatures  {
             }
 
             // Deal damages.
-            int _damages = attributes.AttackDamages;
+            int _damages = GetDamages();
             attackTarget.TakeDamage(_damages);
 
             this.Log($"{Name} attacks {attackTarget.Name} and deals {_damages} damages");
         }
 
         internal virtual void OnStopAttack() {
-            hasAttackTarget = false;
             isAttacking = false;
-
             attackTimer = attributes.AttackCooldown.Random();
         }
         #endregion
@@ -450,6 +458,11 @@ namespace Necrovine.Creatures  {
             // Disable core components.
             foreach (Behaviour _behaviour in coreBehaviours) {
                 _behaviour.enabled = false;
+            }
+
+            // Update flags.
+            foreach (FlagValue _flag in onDeathFlags.Flags) {
+                _flag.SetFlag();
             }
         }
 

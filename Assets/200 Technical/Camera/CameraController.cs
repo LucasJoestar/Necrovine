@@ -18,7 +18,7 @@ namespace Necrovine.CameraManagement  {
         #region Global Members
         [Section("Camera Controller")]
 
-		[SerializeField, Enhanced, Required] private new Camera camera = null;
+		[SerializeField, Enhanced, Required] private new Transform camera = null;
 		[SerializeField, Enhanced, Required] private Transform target = null;
 
         [Space]
@@ -33,8 +33,29 @@ namespace Necrovine.CameraManagement  {
 
         [Space, HorizontalLine(SuperColor.Raspberry), Space]
 
+        [SerializeField] private bool isEnabled = true;
+
+        [Space]
+
         [SerializeField, Enhanced, ReadOnly] private List<Transform> importantObjects = new List<Transform>();
         [SerializeField, Enhanced, ReadOnly] private List<TransparentObject> transparentObjects = new List<TransparentObject>();
+        #endregion
+
+        #region Behaviour
+        public void EnableController() {
+            isEnabled = true;
+
+            camera.position = target.position + cameraOffset;
+        }
+
+        public void DisableController() {
+            for (int i = transparentObjects.Count; i-- > 0;) {
+                transparentObjects[i].UpdateTransparency();
+            }
+
+            transparentObjects.Clear();
+            isEnabled = false;
+        }
         #endregion
 
         #region Update
@@ -44,19 +65,24 @@ namespace Necrovine.CameraManagement  {
         // -----------------------
 
         void ILateUpdate.Update() {
+            if (!isEnabled) {
+                return;
+            }
+
             foreach (TransparentObject _object in transparentObjects) {
                 _object.ResetState();
             }
 
             // Cast a ray from each object to the camera, and register transparent obstructing objects.
-            Vector3 _from = camera.transform.position;
+            Vector3 _from = camera.position;
 
             foreach (Transform _object in importantObjects) {
                 int _amount = Physics.RaycastNonAlloc(_from, (_object.position - _from).normalized, raycastBuffer, MaxRayDistance, transparencyRayMask, QueryTriggerInteraction.Ignore);
 
                 for (int i = 0; i < _amount; i++) {
 
-                    if (raycastBuffer[i].collider.TryGetComponent(out TransparentObject _obstacle)) {
+                    Transform _transform = raycastBuffer[i].transform;
+                    if (_transform.TryGetComponent(out TransparentObject _obstacle) || _transform.parent.TryGetComponent(out _obstacle)) {
                         _obstacle.SetTransparent(transparency);
 
                         if (!transparentObjects.Contains(_obstacle)) {
@@ -74,12 +100,7 @@ namespace Necrovine.CameraManagement  {
             }
 
             // Follow player.
-            float _deltaTime = DeltaTime;
-            if (_deltaTime != 0f) {
-                _deltaTime = Mathf.Clamp(_deltaTime / (1f / 24f), 0f, 1f);
-            }
-
-            camera.transform.position = Vector3.MoveTowards(camera.transform.position, target.position + cameraOffset, _deltaTime * followSpeed);
+            camera.position = Vector3.Lerp(camera.position, target.position + cameraOffset, followSpeed);
         }
         #endregion
 

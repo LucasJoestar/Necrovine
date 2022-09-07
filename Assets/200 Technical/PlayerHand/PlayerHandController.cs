@@ -1,4 +1,4 @@
-// ===== Enhanc// ===== Necrovine - https://github.com/LucasJoestar/Necrovine ===== //
+// ===== Necrovine - https://github.com/LucasJoestar/Necrovine ===== //
 //
 // Notes:
 //
@@ -6,8 +6,10 @@
 
 using EnhancedEditor;
 using EnhancedFramework.Core;
+using EnhancedFramework.GameStates;
 using EnhancedFramework.Input;
 using EnhancedFramework.Physics3D;
+using Necrovine.Core;
 using Necrovine.Creatures;
 using Necrovine.Interactable;
 using Necrovine.UI;
@@ -32,6 +34,8 @@ namespace Necrovine.Player {
 
 		[SerializeField, Enhanced, Required] private BaseInputAsset cursorInput = null;
 		[SerializeField, Enhanced, Required] private BaseInputAsset actionInput = null;
+		[SerializeField, Enhanced, Required] private BaseInputAsset pauseInput = null;
+		[SerializeField, Enhanced, Required] private BaseInputAsset quitInput = null;
         #endregion
 
         #region Enhanced Behaviour
@@ -45,10 +49,26 @@ namespace Necrovine.Player {
 
         #region Cursor Behaviour
         private readonly RaycastHit[] hitBuffer = new RaycastHit[6];
+		private PauseState pauseState = null;
 
 		// -----------------------
 
 		void IInputUpdate.Update() {
+			// Quit.
+			if (quitInput.Performed()) {
+				Application.Quit();
+            }
+
+			// Pause.
+			if (pauseInput.Performed() && GameStateManager.Instance.StateOverride.CanPause) {
+				if (pauseState == null) {
+					pauseState = GameState.CreateState<PauseState>();
+				} else {
+					pauseState.DestroyState();
+					pauseState = null;
+				}
+            }
+
 			// Cursor displacement.
 			Vector2 _delta = cursorInput.GetVector2Axis();
 			if (!_delta.IsNull()) {

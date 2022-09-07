@@ -52,9 +52,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   comment: 
   Tags:
-    Tags: []
+    Tags:
+    - id: 8
   lastModifiedBy: Lucas
-  lastModifiedDate: 07/09/2022 00:36:49
+  lastModifiedDate: 07/09/2022 12:30:26
   IsEditorPreview: 0
 --- !u!114 &4980011375995854947
 MonoBehaviour:
@@ -74,10 +75,14 @@ MonoBehaviour:
   animator: {fileID: 632853092}
   extended: {fileID: 4980011375995854951}
   audio: {fileID: 4980011375995854955}
+  onDeathFlags:
+    Flags: []
+  gaugeColor: 10
+  gauge: {fileID: 0}
   coreBehaviours:
   - {fileID: 4980011375995854948}
   - {fileID: 4980011375995854947}
-  health: 31
+  health: 16
   hasAttackTarget: 0
   isAttacking: 0
   isHit: 0
@@ -100,6 +105,7 @@ MonoBehaviour:
   attackTags:
     Tags:
     - id: 6
+    - id: 9
   detectionMask:
     serializedVersion: 2
     m_Bits: 8448
@@ -126,7 +132,8 @@ MonoBehaviour:
   ignoredColliders:
   - {fileID: 4980011375995854953}
   - {fileID: 4980011376710161698}
-  attributes: {fileID: 11400000, guid: 1e4a1a887ffede04bb9eebc970264458, type: 2}
+  attributes: {fileID: 11400000, guid: 6996f35254dd17c42b84a172bc301734, type: 2}
+  speedVar: 0
   Velocity:
     Movement: {x: 0, y: 0, z: 0}
     Force: {x: 0, y: 0, z: 0}

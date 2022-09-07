@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/000 Game/Scenes/Core.unity
+    path: Assets/000 Game/Scenes/SCN_Core.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/000 Game/Scenes/SCN_Dungeon_01.unity
+    guid: d5d67166ab8a4dc4cb62f40d5004be2c
   m_configObjects: {}

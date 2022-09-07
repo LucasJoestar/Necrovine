@@ -48,7 +48,7 @@ MonoBehaviour:
   Tags:
     Tags: []
   lastModifiedBy: Lucas
-  lastModifiedDate: 06/09/2022 13:16:33
+  lastModifiedDate: 07/09/2022 13:34:21
   IsEditorPreview: 0
 --- !u!114 &2366152656082649637
 MonoBehaviour:
@@ -62,3 +62,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b236f46dd846c4a9295f68aa66dce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chronos: 1
+  attributes: {fileID: 11400000, guid: 2908b789b414f494190d4a2cbfd1b1e3, type: 2}
+  player: {fileID: 0}
+  cursor: {fileID: 0}
+  camera: {fileID: 0}
+  cursorInput: {fileID: 11400000, guid: 2f550d0e33efbc4428e35f1b141aa304, type: 2}
+  actionInput: {fileID: 11400000, guid: bd0995341837fd64d9c695af9fba9b73, type: 2}
+  pauseInput: {fileID: 11400000, guid: c394f01ac6b5d334db8d575437e76a7b, type: 2}
+  quitInput: {fileID: 11400000, guid: 4c97a30878a859142adc19bf7d79b80c, type: 2}

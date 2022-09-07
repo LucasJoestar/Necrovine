@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5169571879768349712}
   - component: {fileID: 5169571879768349715}
   - component: {fileID: 5169571879768349714}
+  - component: {fileID: 5994711733842203588}
+  - component: {fileID: 7237770019306246406}
   m_Layer: 0
   m_Name: PF_GameManager
   m_TagString: Untagged
@@ -51,7 +53,7 @@ MonoBehaviour:
   Tags:
     Tags: []
   lastModifiedBy: Lucas
-  lastModifiedDate: 05/09/2022 15:25:12
+  lastModifiedDate: 07/09/2022 11:47:02
   IsEditorPreview: 0
 --- !u!114 &5169571879768349719
 MonoBehaviour:
@@ -122,5 +124,47 @@ MonoBehaviour:
   inputs:
   - {fileID: 11400000, guid: bd0995341837fd64d9c695af9fba9b73, type: 2}
   - {fileID: 11400000, guid: 2f550d0e33efbc4428e35f1b141aa304, type: 2}
-  - {fileID: 11400000, guid: 0407dc2ab45eca841a5ea1df4cd16e57, type: 2}
-  - {fileID: 11400000, guid: 2587fb6c88ce21547930170c8f775adc, type: 2}
+  - {fileID: 11400000, guid: c394f01ac6b5d334db8d575437e76a7b, type: 2}
+  - {fileID: 11400000, guid: 4c97a30878a859142adc19bf7d79b80c, type: 2}
+--- !u!114 &5994711733842203588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6cd8c95b0d9fa049b29a2ec29641024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chronos: 1
+  gameOverFlag:
+    holder: {fileID: 11400000, guid: 4b6c1e03de465ad419c1858f682a9dd7, type: 2}
+    guid: -42687978
+  dungeonCompleteFlag:
+    holder: {fileID: 11400000, guid: 4b6c1e03de465ad419c1858f682a9dd7, type: 2}
+    guid: -742002991
+  player: {fileID: 0}
+  gameOverLoadDelay: 8
+  completeDungeonLoadDelay: 8
+--- !u!114 &7237770019306246406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5c4d63c5ddb3b4798f32dafab8ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chronos: 1
+  operationPriority: 0
+  dungeonBundles:
+  - {fileID: 11400000, guid: 5e6b178aec17c494c893cfa6731410dd, type: 2}
+  fadeInDuration: 0.86
+  fadeInEase: 3
+  fadeOutDuration: 2.13
+  fadeOutEase: 3

@@ -28,24 +28,21 @@ namespace Necrovine.UI  {
 		[SerializeField] private Ease fillEase = Ease.OutQuad;		
         #endregion
 
-        #region Enhanced Behaviour
-        private void OnDestroy() {
-			tween.Kill();
-        }
-        #endregion
-
         #region Gauge
         private Tween tween = null;
 
 		// -----------------------
 
 		public void SetGaugeValue(float _percent) {
-			if (tween != null) {
+			if (tween.IsActive()) {
 				tween.Kill();
 			}
 
+			// Hide the bar if full or empty.
 			if ((_percent == 0f) || (_percent == 1f)) {
 				group.alpha = 0f;
+				fill.fillAmount = _percent;
+
 				return;
 			}
 
@@ -65,8 +62,19 @@ namespace Necrovine.UI  {
 		public void SetTransform(Transform _reference) {
 			Transform _transform = transform;
 			_transform.position = _reference.position;
+
 			//_transform.rotation = Quaternion.LookRotation(_transform.forward, -_reference.forward);
         }
-        #endregion
-    }
+
+		// -----------------------
+
+		public void Destroy() {
+			if (tween.IsActive()) {
+				tween.Kill();
+			}
+
+			Destroy(gameObject);
+		}
+		#endregion
+	}
 }

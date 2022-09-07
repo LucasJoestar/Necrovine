@@ -3,9 +3,11 @@
     "references": [
         "EnhancedEditor",
         "EnhancedFramework.Core",
+        "EnhancedFramework.GameStates",
         "EnhancedFramework.Input",
         "EnhancedFramework.Physics3D",
         "Necrovine.GameplayElements",
+        "Necrovine.Core",
         "Necrovine.UI"
     ],
     "includePlatforms": [],

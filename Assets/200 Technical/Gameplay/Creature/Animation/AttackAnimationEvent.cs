@@ -1,8 +1,8 @@
-// ===== Enhanced Framework - https://github.com/LucasJoestar/Necrovine ===== //
+// ===== Necrovine - https://github.com/LucasJoestar/Necrovine ===== //
 //
 // Notes:
 //
-// ========================================================================== //
+// ================================================================= //
 
 using EnhancedEditor;
 using EnhancedFramework.Core;
