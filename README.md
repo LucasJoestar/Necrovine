@@ -3,7 +3,7 @@
 This is a mini dungeon crawler made under 48 hours. <br/>
 As I struggled to find correct sound fx that fit with the game, only music made it to the final result.
 
-# Credits:
+## Credits:
 Fonts <br/>
 &emsp;&emsp; https://www.dafont.com/optimusprinceps.font
 	
