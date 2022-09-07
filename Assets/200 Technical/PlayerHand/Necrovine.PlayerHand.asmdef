@@ -1,0 +1,20 @@
+{
+    "name": "Necrovine.Hand",
+    "references": [
+        "EnhancedEditor",
+        "EnhancedFramework.Core",
+        "EnhancedFramework.Input",
+        "EnhancedFramework.Physics3D",
+        "Necrovine.GameplayElements",
+        "Necrovine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

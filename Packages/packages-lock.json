@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.hauntedpsx.render-pipelines.psx": {
+      "version": "https://github.com/pastasfuture/com.hauntedpsx.render-pipelines.psx.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "7.3.1"
+      },
+      "hash": "a28da49f24ebfdf63aca6e6a39078822492edb72"
+    },
     "com.unity.cinemachine": {
       "version": "2.6.17",
       "depth": 0,
@@ -63,6 +72,15 @@
       "source": "registry",
       "dependencies": {
         "com.unity.settings-manager": "1.0.3"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.render-pipelines.core": {
+      "version": "7.3.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },

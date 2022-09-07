@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5169571879768349718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5169571879768349717}
+  - component: {fileID: 5169571879768349716}
+  - component: {fileID: 5169571879768349719}
+  - component: {fileID: 5169571879768349712}
+  - component: {fileID: 5169571879768349715}
+  - component: {fileID: 5169571879768349714}
+  m_Layer: 0
+  m_Name: PF_GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5169571879768349717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5169571879768349716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7754e74e0a5c0f499a1b07bd19fdf18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: 
+  Tags:
+    Tags: []
+  lastModifiedBy: Lucas
+  lastModifiedDate: 05/09/2022 15:25:12
+  IsEditorPreview: 0
+--- !u!114 &5169571879768349719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdd6f531328cf443aba6d8b0f6ee8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chronos: 1
+  settings: {fileID: 11400000, guid: d02cf30d225c83a47a2a35583959e40e, type: 2}
+--- !u!114 &5169571879768349712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a58b6dc40b2caa48b93720743005059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chronos: 1
+--- !u!114 &5169571879768349715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc80cd3b53b2184190b935c4a889be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chronos: 1
+  <StateOverride>k__BackingField:
+    HasControl: 1
+    CanPause: 1
+    IsPaused: 0
+    IsLoading: 0
+    IsQuitting: 0
+  <CurrentState>k__BackingField:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DefaultState, ns: EnhancedFramework.GameStates, asm: EnhancedFramework.GameStates}
+--- !u!114 &5169571879768349714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169571879768349718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5a9412ffe95bd4d920284bdb9aed97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chronos: 1
+  map: {fileID: -944628639613478452, guid: 11e630754af22da4e87b915a7be970d6, type: 3}
+  inputs:
+  - {fileID: 11400000, guid: bd0995341837fd64d9c695af9fba9b73, type: 2}
+  - {fileID: 11400000, guid: 2f550d0e33efbc4428e35f1b141aa304, type: 2}
+  - {fileID: 11400000, guid: 0407dc2ab45eca841a5ea1df4cd16e57, type: 2}
+  - {fileID: 11400000, guid: 2587fb6c88ce21547930170c8f775adc, type: 2}

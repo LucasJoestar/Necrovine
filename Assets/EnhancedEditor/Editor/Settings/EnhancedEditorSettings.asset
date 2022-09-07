@@ -43,9 +43,9 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-  AutoManagedResourceDirectory: 700 EnhancedFramework/EnhancedEditor/AutoManagedResources
-  InstanceTrackerDirectory: 700 EnhancedFramework/EnhancedEditor/Editor/InstanceTracker
-  ScriptTemplateDirectory: 700 EnhancedFramework/EnhancedEditor/Editor/ScriptTemplate
+  AutoManagedResourceDirectory: EnhancedEditor/AutoManagedResources
+  InstanceTrackerDirectory: EnhancedEditor/Editor/InstanceTrackers
+  ScriptTemplateDirectory: EnhancedEditor/Editor/ScriptTemplates
   CoreScene:
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  IsCoreSceneEnabled: 1
+    guid: 
+  IsCoreSceneEnabled: 0

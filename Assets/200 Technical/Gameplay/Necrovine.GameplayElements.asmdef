@@ -1,0 +1,22 @@
+{
+    "name": "Necrovine.GameplayElements",
+    "references": [
+        "EnhancedEditor",
+        "EnhancedFramework.Core",
+        "EnhancedFramework.Input",
+        "EnhancedFramework.Movable3D",
+        "EnhancedFramework.Physics3D",
+        "Necrovine.CameraManagement",
+        "Necrovine.UI",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

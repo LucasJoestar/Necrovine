@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958002ee7c064d44ab241518ac0f3da1, type: 3}
+  m_Name: ATB_EnemyMovableAttributes
+  m_EditorClassIdentifier: 
+  Speed:
+    CurrentTime: 0.5
+    Range: {x: 0.32, y: 2.25}
+    Duration: 0.35
+    Curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2.825865
+        outSlope: 2.825865
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.032549728
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DecreaseDuration: 0.1
+    DecreaseCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.7371822
+        outSlope: -0.7371822
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08318263
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  AirSpeedAccelCoef: 0.65
+  GroundSurfaceRotationCoef: 1
+  GroundSurfaceRotationSpeed: 5
+  GravityCoef: 1
+  DoOverrideCreatureCollisionSettings: 0
