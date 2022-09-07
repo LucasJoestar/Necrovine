@@ -1,7 +1,7 @@
 # Necrovine
 
 This is a mini dungeon crawler made under 48 hours.
-I struggle to find correct sound fx to implement, so I decided to focus on the game mechanics and level design instead.
+As I struggled to find correct sound fx that fit with the game, only music made it to the final result.
 
 # Credits:
 Fonts
