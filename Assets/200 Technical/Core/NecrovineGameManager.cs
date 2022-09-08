@@ -54,12 +54,14 @@ namespace Necrovine.Core  {
         private void OnGameOver(bool _isGameOver) {
             if (_isGameOver) {
                 GameOver();
+                gameOverFlag.Flag.Invert();
             }
         }
 
         private void OnCompleteDungeon(bool _isComplete) {
             if (_isComplete) {
                 CompleteDungeon();
+                dungeonCompleteFlag.Flag.Invert();
             }
         }
         #endregion
